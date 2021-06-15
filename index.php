@@ -20,7 +20,7 @@ require_once __DIR__ . "/classes/model_product.php";
 <body>
 
     <?php
-    $generic = new Product("Prodotto", "Marca", 1);
+    $generic = new Product("Prodotto", "Marca", 7);
     $phone = new ModelProduct("Smartphone", "Samsung", 600, "S20");
     $extra = new ColorProduct("Jeans", "Diesel", 200, "Blu");
     ?>
@@ -29,7 +29,8 @@ require_once __DIR__ . "/classes/model_product.php";
         <h1>Prodotto generico</h1>
         <p>Tipo di prodotto: <strong><?php echo $generic->getType(); ?></strong></p>
         <p>Marca del prodotto: <strong><?php echo $generic->getBrand(); ?></strong></p>
-        <p>Prezzo del prodotto: <strong><?php echo $generic->price; ?> €</strong></p>
+        <p>Prezzo del prodotto: <strong><?php echo $generic->getPrice(); ?> €</strong></p>
+        <p>Prezzo con sconto 20%: <strong><?php echo $generic->getDiscountPrice(20); ?> €</strong></p>
         <p>Nome completo: <strong><?php echo $generic->getFullName(); ?></strong></p>
     </section>
 
@@ -38,7 +39,8 @@ require_once __DIR__ . "/classes/model_product.php";
         <p>Tipo di prodotto: <strong><?php echo $phone->getType(); ?></strong></p>
         <p>Marca del prodotto: <strong><?php echo $phone->getBrand(); ?></strong></p>
         <p>Modello del prodotto: <strong><?php echo $phone->model; ?></strong></p>
-        <p>Prezzo del prodotto: <strong><?php echo $phone->price; ?> €</strong></p>
+        <p>Prezzo del prodotto: <strong><?php echo $phone->getPrice(); ?> €</strong></p>
+        <p>Prezzo con sconto 40% 50€ : <strong><?php echo $phone->getDiscountPrice(40); ?> €</strong></p>
         <p>Nome completo: <strong><?php echo $phone->getFullName(); ?></strong></p>
     </section>
 
@@ -47,7 +49,8 @@ require_once __DIR__ . "/classes/model_product.php";
         <p>Tipo di prodotto: <strong><?php echo $extra->getType(); ?></strong></p>
         <p>Marca del prodotto: <strong><?php echo $extra->getBrand(); ?></strong></p>
         <p>Colore del prodotto: <strong><?php echo $extra->color; ?></strong></p>
-        <p>Prezzo del prodotto: <strong><?php echo $extra->price; ?> €</strong></p>
+        <p>Prezzo del prodotto: <strong><?php echo $extra->getPrice(); ?> €</strong></p>
+        <p>Prezzo con sconto 30%: <strong><?php echo $extra->getDiscountPrice(30); ?> €</strong></p>
         <p>Nome completo: <strong><?php echo $extra->getFullName(); ?></strong></p>
     </section>
 

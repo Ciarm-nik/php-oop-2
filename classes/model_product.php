@@ -19,4 +19,9 @@ class ModelProduct extends Product
     {
         return parent::getFullName() . " " . $this->model;
     }
+
+    public function getDiscountPrice($discount)
+    {
+        return parent::getDiscountPrice($discount) -50;
+    }
 }

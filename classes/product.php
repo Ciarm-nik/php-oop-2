@@ -28,8 +28,18 @@ class Product
         return $this->brand;
     }
 
+    public function getPrice()
+    {
+        return $this->price;
+    }
+
     public function getFullName()
     {
         return $this->type . " " . $this->brand;
+    }
+
+    public function getDiscountPrice($discount)
+    {
+        return $this->price - ($this->price * ($discount / 100));
     }
 }
