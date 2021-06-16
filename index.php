@@ -20,9 +20,23 @@ require_once __DIR__ . "/classes/model_product.php";
 <body>
 
     <?php
-    $generic = new Product("Prodotto", "Marca", 7);
-    $phone = new ModelProduct("Smartphone", "Samsung", 600, "S20");
-    $extra = new ColorProduct("Jeans", "Diesel", 200, "Blu");
+
+    try {
+        // In caso di stringa al posto del numero mi restituisce un errore
+        $generic = new Product("Prodotto", "Marca", 7);
+        $phone = new ModelProduct("Smartphone", "Samsung", 600, "S20");
+        $extra = new ColorProduct("Jeans", "Diesel", 200, "Blu");
+    } catch (Exception $e) {
+
+        echo $e->getMessage();
+        die();
+    };
+  
+
+    //  var_dump($generic);
+    //  var_dump($phone);
+    //  var_dump($extra);
+
     ?>
 
     <section>
@@ -53,7 +67,6 @@ require_once __DIR__ . "/classes/model_product.php";
         <p>Prezzo con sconto 30%: <strong><?php echo $extra->getDiscountPrice(30); ?> €</strong></p>
         <p>Nome completo: <strong><?php echo $extra->getFullName(); ?></strong></p>
     </section>
-
 
 </body>
 
